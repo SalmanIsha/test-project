@@ -2,15 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Initialize') {
-            steps {
-                //enable remote triggers
-                script {
-                    properties([pipelineTriggers([pollSCM('* * * * *')])])
-                }
-                
-            }
-        }
+        
         stage('Hello') {
             steps {
                 git 'https://github.com/SalmanIsha/test-project.git'
