@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  tasks:
+
+    - name: Deploy a hello world application to the default deploy_path
+      jboss:
+       src: /var/lib/jenkins/workspace/test/webapp/target/webapp.war
+       deploy_path: /opt/wildfly/standalone/deployments/
+       deployment: webapp.war
+       state: present
